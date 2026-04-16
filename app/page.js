@@ -1,4 +1,5 @@
 import { BookOpen, Calculator, CircleHelp } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       </div>
 
       <div className="grid gap-10 md:grid-cols-3">
+        <Link href="/learn" className="block">
         <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500">
           <div className="flex items-center justify-center gap-2">
             <BookOpen size={30} className="text-[#ede7e7] dark:text-[#d6d3d3]" />
@@ -28,7 +30,9 @@ export default function Home() {
             FHSA, and RRSP, plus budgeting, debt, mortgages, taxes, and more.
           </p>
         </article>
+        </Link>
 
+        <Link href="/tools" className="block">
         <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500">
           <div className="flex items-center justify-center gap-2">
             <Calculator size={30} className="text-[#ede7e7] dark:text-[#d6d3d3]" />
@@ -38,11 +42,12 @@ export default function Home() {
           </div>
           <p className="mt-3 text-base leading-6 tracking-wider text-[#ede7e7] dark:text-[#d6d3d3]">
             Use simple calculators to plan savings goals, understand debt, and
-            make better financial decisions. Want to know how much your savings
-            could be in 5 years? Check it here.
+            make better financial decisions. Use them to help you visualize your objectives!
           </p>
         </article>
+        </Link>
 
+        <Link href="/about" className="block">
         <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500">
           <div className="flex items-center justify-center gap-2">
             <CircleHelp size={30} className="text-[#ede7e7] dark:text-[#d6d3d3]" />
@@ -56,6 +61,7 @@ export default function Home() {
             way to set your goals.
           </p>
         </article>
+        </Link>
       </div>
     </section>
   );
