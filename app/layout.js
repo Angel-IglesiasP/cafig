@@ -42,8 +42,8 @@ export default function RootLayout({ children }) {
       <body className="bg-[#ffffff] text-[#000000]">
         <div className="grid min-h-screen grid-rows-[auto_1fr]">
           <header className="border-b border-b-[#2f314d] dark:border-b-[#919191] bg-[#aca8a8] dark:bg-[#454242]">
-            <Link href="/" className="inline-block px-6 py-6 -mb-5">
-              <div className="flex items-center gap-1.5">
+            <Link href="/" className="inline-block px-6 py-6 -mb-4 ">
+              <div className="flex items-center gap-1.5 ">
               <h1 className="text-3xl font-bold tracking-[.21em] text-[#191919] dark:text-[#f3ecec]">CAFIG</h1>
                 <Image
                   src="/CAFIGlogo.png"
@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
           </header>
 
           <div className="flex">
-            <aside className="w-49 border-r border-r-[#2c2d3c] dark:border-r-[#aca8a8] bg-[#aca8a8] dark:bg-[#454242] p-4">
+            <aside className="w-56 border-r border-r-[#2c2d3c] dark:border-r-[#aca8a8] bg-[#aca8a8] dark:bg-[#454242] p-4">
               <nav className="mt-8 space-y-4">
                 {navItems.map((item) => {
                   const Icon = item.icon;
@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
                             <Link
                               key={child.name}
                               href={child.href}
-                              className="block rounded-md px-3 py-1 text-xs font-medium text-[#2f314d] hover:bg-slate-100 dark:text-[#d6d3d3] dark:hover:text-[#191919]"
+                              className="block rounded-md px-3 py-1 text-[14px] font-medium text-[#2f314d] hover:bg-slate-100 dark:text-[#d6d3d3] dark:hover:text-[#191919]"
                             >
                               {child.name}
                             </Link>

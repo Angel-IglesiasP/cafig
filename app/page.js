@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="mx-auto max-w-6xl space-y-8">
+    <section className="mx-auto max-w-7xl space-y-8">
       <div className="px-8 py-10 text-center">
         <h2 className="text-3xl font-bold text-[#191919] dark:text-[#d6d3d3]">
           Welcome to The Canadian Financial Guide (CAFIG for short)
@@ -18,7 +18,7 @@ export default function Home() {
 
       <div className="grid gap-10 md:grid-cols-4">
         <Link href="/learn" className="block">
-        <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500">
+        <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500 h-60">
           <div className="flex items-center justify-center gap-2">
             <BookOpen size={30} className="text-[#ede7e7] dark:text-[#d6d3d3]" />
             <h3 className="text-xl font-bold text-[#ede7e7] dark:text-[#d6d3d3]">
@@ -33,7 +33,7 @@ export default function Home() {
         </Link>
 
         <Link href="/tools" className="block">
-        <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500">
+        <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500 h-60">
           <div className="flex items-center justify-center gap-2">
             <Calculator size={30} className="text-[#ede7e7] dark:text-[#d6d3d3]" />
             <h3 className="text-xl font-bold text-[#ede7e7] dark:text-[#d6d3d3]">
@@ -48,7 +48,7 @@ export default function Home() {
         </Link>
 
          <Link href="/liveData" className="block">
-        <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500">
+        <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500 h-60">
           <div className="flex items-center justify-center gap-2">
             <ChartColumnIcon size={30} className="text-[#ede7e7] dark:text-[#d6d3d3]" />
             <h3 className="text-xl font-bold text-[#ede7e7] dark:text-[#d6d3d3]">
@@ -62,7 +62,7 @@ export default function Home() {
         </Link>
 
         <Link href="/about" className="block">
-        <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500">
+        <article className="rounded-lg border-2 border-[#2f314d] bg-[#888787] p-6 text-center dark:border-[#aca8a8] dark:bg-gray-500 h-60">
           <div className="flex items-center justify-center gap-2">
             <CircleHelp size={30} className="text-[#ede7e7] dark:text-[#d6d3d3]" />
             <h3 className="text-xl font-bold text-[#ede7e7] dark:text-[#d6d3d3]">
