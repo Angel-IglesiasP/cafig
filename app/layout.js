@@ -32,7 +32,7 @@ const navItems = [
   ],
 },
 
-  { name: "Live Data", href: "/data", icon: ChartColumnIcon },
+  { name: "Live Data", href: "/liveData", icon: ChartColumnIcon },
   { name: "About", href: "/about", icon: CircleHelp },
 ];
 
