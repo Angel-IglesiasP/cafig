@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-[#ffffff] text-[#000000]">
-        <div className="min-h-screen">
+        <div className="grid min-h-screen grid-rows-[auto_1fr]">
           <header className="border-b border-b-[#2f314d] dark:border-b-[#919191] bg-[#aca8a8] dark:bg-[#454242]">
             <Link href="/" className="inline-block px-6 py-6 -mb-5">
               <div className="flex items-center gap-1.5">
@@ -40,15 +40,15 @@ export default function RootLayout({ children }) {
           </header>
 
           <div className="flex">
-            <aside className="min-h-[calc(100vh-81px)] w-49 border-r border-r-[#2c2d3c] dark:border-r-[#aca8a8] bg-[#aca8a8] dark:bg-[#454242] p-4">
-              <nav className="space-y-2">
+            <aside className="w-49 border-r border-r-[#2c2d3c] dark:border-r-[#aca8a8] bg-[#aca8a8] dark:bg-[#454242] p-4">
+              <nav className="space-y-4 mt-8">
                 {navItems.map((item) => {
                   const Icon = item.icon;
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold tracking-wider text-[#191919] dark:text-[#f3ecec] hover:bg-slate-100 dark:hover:text-[#191919]"
+                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold tracking-[5] text-[#191919] dark:text-[#f3ecec] hover:bg-slate-100 dark:hover:text-[#191919]"
                   >
                     <Icon size={18} />
                     <span>{item.name}</span>
