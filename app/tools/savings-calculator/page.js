@@ -51,7 +51,7 @@ export default function SavingsCalculatorPage() {
     .join(" ");
 
   return (
-    <section className="mx-auto max-w-[1500px] space-y-8">
+    <section className="mx-auto max-w-375 space-y-8">
       <div className="px-8 py-6 text-center">
           <h2 className="text-3xl font-bold text-[#191919] dark:text-[#d6d3d3]">
             Savings Calculator
