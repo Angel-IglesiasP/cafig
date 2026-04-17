@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-[#ffffff] text-[#000000]">
         <div className="grid min-h-screen grid-rows-[auto_1fr]">
-          <header className="border-b border-b-[#2f314d] dark:border-b-[#919191] bg-[#aca8a8] dark:bg-[#454242]">
+          <header className="fixed top-0 left-0 right-0 z-50 border-b border-b-[#2f314d] dark:border-b-[#919191] bg-[#aca8a8] dark:bg-[#454242]">
             <Link href="/" className="inline-block px-6 py-6 -mb-4 ">
               <div className="flex items-center gap-1.5 ">
               <h1 className="text-3xl font-bold tracking-[.21em] text-[#191919] dark:text-[#f3ecec]">CAFIG</h1>
@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
           </header>
 
           <div className="flex">
-            <aside className="w-56 border-r border-r-[#2c2d3c] dark:border-r-[#aca8a8] bg-[#aca8a8] dark:bg-[#454242] p-4">
+            <aside className="fixed top-24.25 left-0 bottom-0 w-56 border-r border-r-[#2c2d3c] dark:border-r-[#aca8a8] bg-[#aca8a8] dark:bg-[#454242] p-4">
               <nav className="mt-8 space-y-4">
                 {navItems.map((item) => {
                   const Icon = item.icon;
@@ -96,7 +96,7 @@ export default function RootLayout({ children }) {
 
             </aside>
 
-            <main className="flex-1 p-6">{children}</main>
+            <main className="ml-56 mt-24.25 flex-1 p-6">{children}</main>
           </div>
         </div>
       </body>
