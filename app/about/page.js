@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <section className="mx-auto max-w-4xl space-y-4">
+    <section className="mx-auto max-w-4xl space-y-4 mt-10">
       <h2 className="text-3xl font-bold text-[#191919] dark:text-[#eee9e9]">
         About CAFIG
       </h2>
