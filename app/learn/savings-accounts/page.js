@@ -36,26 +36,27 @@ const accountTypes = [
 ];
 
 export default function SavingsPage() {
-  const [startingAmount, setStartingAmount] = useState(1000);
-  const [monthlyContribution, setMonthlyContribution] = useState(200);
-  const [annualRate, setAnnualRate] = useState(5);
-  const [years, setYears] = useState(10);
+  const [startingAmount, setStartingAmount] = useState(0.93);
+  const [annualRate, setAnnualRate] = useState(2.25);
+  const [years, setYears] = useState(1000);
 
-  const monthlyRate = annualRate / 100 / 12;
-  const totalMonths = years * 12;
+  const parseDecimalInput = (value) => {
+    const parsedValue = Number.parseFloat(value);
 
+    return Number.isNaN(parsedValue) ? 0 : parsedValue;
+  };
+
+  const yearlyRate = annualRate / 100;
+  const totalYears = Math.round(years);
   let futureValue = startingAmount;
   const growthData = [{ year: 0, value: startingAmount }];
 
-  for (let month = 0; month < totalMonths; month++) {
-    futureValue = futureValue * (1 + monthlyRate) + monthlyContribution;
-
-    if ((month + 1) % 12 === 0) {
-      growthData.push({
-        year: (month + 1) / 12,
-        value: futureValue,
-      });
-    }
+  for (let year = 1; year <= totalYears; year++) {
+    futureValue = futureValue * (1 + yearlyRate);
+    growthData.push({
+      year,
+      value: futureValue,
+    });
   }
 
   const chartWidth = 520;
@@ -128,7 +129,7 @@ export default function SavingsPage() {
 
       <div className="rounded-lg border-2 border-[#2f314d] bg-white p-6 dark:border-[#aca8a8] dark:bg-gray-600">
         <h3 className="text-2xl font-bold text-[#191919] dark:text-[#d6d3d3]">
-          Compound Growth Calculator
+          Fry's Compound Growth! you can also check your savings in the tools section!
         </h3>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,360px)_1fr]">
@@ -139,20 +140,10 @@ export default function SavingsPage() {
               </span>
               <input
                 type="number"
+                step="0.01"
                 value={startingAmount}
-                onChange={(e) => setStartingAmount(Number(e.target.value))}
-                className="w-full rounded-md border border-[#2f314d] bg-white px-3 py-2 text-[#191919]"
-              />
-            </label>
-
-            <label className="space-y-2">
-              <span className="block text-sm font-semibold text-[#2f314d] dark:text-[#d6d3d3]">
-                Monthly contribution
-              </span>
-              <input
-                type="number"
-                value={monthlyContribution}
-                onChange={(e) => setMonthlyContribution(Number(e.target.value))}
+                disabled
+                onChange={(e) => setStartingAmount(parseDecimalInput(e.target.value))}
                 className="w-full rounded-md border border-[#2f314d] bg-white px-3 py-2 text-[#191919]"
               />
             </label>
@@ -163,8 +154,10 @@ export default function SavingsPage() {
               </span>
               <input
                 type="number"
+                step="0.01"
                 value={annualRate}
-                onChange={(e) => setAnnualRate(Number(e.target.value))}
+                disabled
+                onChange={(e) => setAnnualRate(parseDecimalInput(e.target.value))}
                 className="w-full rounded-md border border-[#2f314d] bg-white px-3 py-2 text-[#191919]"
               />
             </label>
@@ -175,8 +168,10 @@ export default function SavingsPage() {
               </span>
               <input
                 type="number"
+                step="0.1"
                 value={years}
-                onChange={(e) => setYears(Number(e.target.value))}
+                disabled
+                onChange={(e) => setYears(parseDecimalInput(e.target.value))}
                 className="w-full rounded-md border border-[#2f314d] bg-white px-3 py-2 text-[#191919]"
               />
             </label>
@@ -197,7 +192,7 @@ export default function SavingsPage() {
                 Growth over time
               </p>
               <p className="text-xs text-[#2f314d] dark:text-[#f3ecec]">
-                Year 0 to Year {years}
+                Year 0 to Year {totalYears}
               </p>
             </div>
 
